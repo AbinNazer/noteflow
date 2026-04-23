@@ -1,6 +1,6 @@
 # 🚀 Noteflow
 
-Noteflow is a full-stack note management application designed to organize notes efficiently using folders, tags, and search. It is built with a modern web stack and structured for scalability, maintainability, and deployment readiness.
+Noteflow is a full-stack note management application designed to organize notes efficiently using folders, tags, and search. It is built with a modern web stack and structured for scalability, maintainability, and deployment readiness. The application also supports Progressive Web App (PWA) capabilities, enabling installation as a desktop-like app.
 
 ---
 
@@ -11,6 +11,7 @@ Noteflow is a full-stack note management application designed to organize notes 
 - Organize notes using folders and tags  
 - Search functionality for quick access  
 - API-driven architecture  
+- Progressive Web App (PWA) support (installable, offline-ready)  
 - Structured backend using Prisma ORM  
 
 ---
@@ -32,6 +33,9 @@ Noteflow is a full-stack note management application designed to organize notes 
 ## DevOps
 - Docker (containerization)  
 
+## Additional
+- PWA (Service Worker + Web App Manifest)
+
 ---
 
 # 🏗️ Architecture Overview
@@ -42,6 +46,7 @@ The application follows a full-stack architecture:
 - API routes act as backend endpoints  
 - Prisma ORM manages database interactions  
 - PostgreSQL stores application data  
+- PWA layer enables offline support and installability  
 
 Flow:
 Client → Next.js → API Routes → Prisma → PostgreSQL
@@ -54,7 +59,7 @@ app/            → Application routes & API endpoints
 components/     → Reusable UI components  
 lib/            → Utility functions and helpers  
 prisma/         → Database schema and migrations  
-public/         → Static assets  
+public/         → Static assets (includes PWA manifest/icons)  
 
 ---
 

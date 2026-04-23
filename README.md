@@ -1,36 +1,147 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Noteflow
 
-## Getting Started
+Noteflow is a full-stack note management application designed to organize notes efficiently using folders, tags, and search. It is built with a modern web stack and structured for scalability, maintainability, and deployment readiness.
 
-First, run the development server:
+---
 
+# ✨ Features
+
+- User authentication system  
+- Create, update, delete notes  
+- Organize notes using folders and tags  
+- Search functionality for quick access  
+- API-driven architecture  
+- Structured backend using Prisma ORM  
+
+---
+
+# 🧠 Tech Stack
+
+## Frontend & Backend
+- Next.js (App Router + API routes)  
+- TypeScript  
+
+## Database
+- PostgreSQL  
+- Prisma ORM  
+
+## Tooling
+- ESLint  
+- npm  
+
+## DevOps
+- Docker (containerization)  
+
+---
+
+# 🏗️ Architecture Overview
+
+The application follows a full-stack architecture:
+
+- Frontend (Next.js) handles UI and routing  
+- API routes act as backend endpoints  
+- Prisma ORM manages database interactions  
+- PostgreSQL stores application data  
+
+Flow:
+Client → Next.js → API Routes → Prisma → PostgreSQL
+
+---
+
+# 📁 Project Structure
+
+app/            → Application routes & API endpoints  
+components/     → Reusable UI components  
+lib/            → Utility functions and helpers  
+prisma/         → Database schema and migrations  
+public/         → Static assets  
+
+---
+
+# ⚙️ Getting Started
+
+## 1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/AbinNazer/noteflow.git
+cd noteflow
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 2. Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 3. Setup environment variables
+Create a `.env` file:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+DATABASE_URL="postgresql://username:password@localhost:5432/noteflow"
+```
 
-## Learn More
+## 4. Setup database
+```bash
+npm run db:generate
+npm run db:migrate
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 5. Run development server
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+App will run at:
+http://localhost:3000
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+# 🗄️ Database Setup (PostgreSQL)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Make sure PostgreSQL is installed and running.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Create database:
+```sql
+CREATE DATABASE noteflow;
+```
+
+Update `.env` with correct credentials, then run migrations.
+
+---
+
+# 🐳 Docker Usage
+
+Build and run the application using Docker:
+
+```bash
+docker build -t noteflow .
+docker run -p 3000:3000 noteflow
+```
+
+For full setup, use Docker with PostgreSQL (recommended via docker-compose).
+
+---
+
+# 🔌 API Overview
+
+- /api/auth/* → authentication  
+- /api/notes → notes CRUD  
+- /api/folders → folder management  
+- /api/tags → tag management  
+- /api/search → search functionality  
+
+---
+
+# 🚧 Future Improvements
+
+- Add role-based access control  
+- Improve search with indexing  
+- Add caching layer (Redis)  
+- CI/CD pipeline integration  
+- Deployment to cloud (AWS / VPS)  
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+
